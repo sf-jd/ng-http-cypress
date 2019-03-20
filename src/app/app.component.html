@@ -1,0 +1,18 @@
+<!-- The content below is only a placeholder and can be replaced. -->
+<div style="text-align:center">
+  <h1>Welcome to {{ title }}!</h1>
+  <button (click)="getPosts()">Get Posts</button>
+  <button (click)="getPostsByUser()">Get Posts by UserID1</button>
+  <div *ngFor="let post of posts | async" class="post-card">
+    <h2 class="post-title">{{post.title}}</h2>
+    <h4 class="user-id">{{post.userId}}</h4>
+    <p>{{post.body}}</p>
+  </div>
+  <hr />
+  <button (click)="getUsers()">Get Users</button>
+  <div *ngFor="let user of users | async" class="user-card">
+    <h2 class="username">{{user.username | json}}</h2>
+    <h3>{{user.name}}</h3>
+    <p>{{user.email}}</p>
+  </div>
+</div>
